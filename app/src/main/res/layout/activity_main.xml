@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1.5">
+
+
+            <ImageView
+                android:id="@+id/gasIv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="right|top"
+                android:layout_margin="10dp"
+                android:src="@drawable/blue"/>
+
+            <TextView
+                android:id="@+id/market"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="In: 50\nOut: 40\nStay: 10"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20dp"/>
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            android:src="@drawable/market"
+            android:layout_weight="5"/>
+
+
+        <ImageView
+            android:id="@+id/lightIv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:scaleType="fitXY"
+            android:src="@drawable/light_off"
+            android:layout_weight="5"/>
+
+
+    </LinearLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
