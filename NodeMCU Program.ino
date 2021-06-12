@@ -6,8 +6,8 @@
 #define FIREBASE_HOST "market-monitoring-system-default-rtdb.asia-southeast1.firebasedatabase.app"  //Database link
 #define FIREBASE_AUTH "991MXEEWoEyj5P3EqJM5iNiXBtExXiu3KEcX7pnQ"  //Database secrate
 
-#define WIFI_SSID "Roboment"      //Router name
-#define WIFI_PASSWORD "roboment@2018"  //Router password
+#define WIFI_SSID "PAPPURAJ"      //Router name
+#define WIFI_PASSWORD "5555555555"  //Router password
 
 
 
@@ -72,15 +72,15 @@ void setup() {
 
 
 void pinSet(){
-  pinMode(D0,OUTPUT);
+
   pinMode(D2,INPUT);//In
-  pinMode(D3,OUTPUT);//Out
+  pinMode(D5,INPUT);//Out
   
-  pinMode(D5,INPUT);//Light in
-  pinMode(D6,OUTPUT);//Light out
+  pinMode(D6,INPUT);//Light in
+  pinMode(D8,OUTPUT);//Light out
   
   pinMode(D7,INPUT);//Fire
-  pinMode(D8,OUTPUT);//Buzzer
+  pinMode(D0,OUTPUT);//Buzzer
   
 }
 
@@ -89,7 +89,7 @@ void pinSet(){
 unsigned int in=0,out=0;
 void loop() {
 
-  if(digitalRead(D7)){
+  if(!digitalRead(D7)){
       setFireData("Fire",1);
       digitalWrite(D0,1);
 
@@ -102,22 +102,22 @@ void loop() {
   }
 
 
-  if(!digitalRead(D5)){
+  if(!digitalRead(D6)){
       setFireData("Light",1);
-      digitalWrite(D6,1);
+      digitalWrite(D8,1);
       pr("Light on");
   }else{
-    digitalWrite(D6,0);
+    digitalWrite(D8,0);
     setFireData("Light",0);
     pr("Light off");
   }
 
 
-  if(digitalRead(D2)){
+  if(!digitalRead(D2)){
       setFireData("In",++in);
       pr("In"+String(in));
       beep();
-  }else if(digitalRead(D3)){
+  }else if(!digitalRead(D5)){
     setFireData("Out",++out);
     pr("Out"+String(out));
     beep();
